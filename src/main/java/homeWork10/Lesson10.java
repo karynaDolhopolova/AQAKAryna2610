@@ -12,7 +12,6 @@ public class Lesson10 {
         mendeleevTable.put(101, "Md");
 
         printMap(mendeleevTable);
-
 ////        SortedSet<Integer> element = new TreeSet<>(mendeleevTable.keySet());
 ////        for (Integer key : element) {
 ////            String value = mendeleevTable.get(key);
