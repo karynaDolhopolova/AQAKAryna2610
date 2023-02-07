@@ -11,22 +11,22 @@ public class Scrolling {
 
     private static Driver driver;
 
-    public static void scroll (WebDriver driver, By by){
-        JavascriptExecutor js=(JavascriptExecutor) driver;
-        boolean bool=true;
-        while(bool){
-            try{
-                WebElement element = driver.findElement(by);
-                bool=false;
-            } catch (Exception ignore){
+    public static void scrollBy(WebDriver driver, By by) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        boolean bool = true;
+        while (bool) {
+            try {
+                driver.findElement(by);
+                bool = false;
+            } catch (Exception ignore) {
                 js.executeScript("window.scrollBy(0,50)");
             }
         }
 
     }
-    public static void ByVisibleElement(WebDriver driver, By by) {
+
+    public static void scroll(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement Element = driver.findElement(by);
-        js.executeScript("arguments[0].scrollIntoView();", Element);
+        js.executeScript("window.scrollBy(0,50)");
     }
 }
