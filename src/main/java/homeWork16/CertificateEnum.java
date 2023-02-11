@@ -3,10 +3,14 @@ package homeWork16;
 import homeWork11.BaseClass;
 
 public enum CertificateEnum {
-    NOCERIFICATE("nocert"), INVALIDCERTIFICATE("invalid"), VALIDCERTIFICATE ("valid");
+    CERTIFICATE_ONE("invalid1", true),
+    CERTIFICATE_TWO("invalid2", true),
+    CERTIFICATE_THREE ("invalid3", true),
+    CERTIFICATE_FOUR ("valid", false);
 
-    CertificateEnum(String type) {
+    CertificateEnum(String type, boolean errorMes) {
         this.type = type;
+        this.errorMes = errorMes;
     }
 
     public String getType() {
@@ -14,5 +18,11 @@ public enum CertificateEnum {
     }
 
     private String type;
+
+    public boolean isErrorMes() {
+        return errorMes;
+    }
+
+    private boolean errorMes;
 
 }

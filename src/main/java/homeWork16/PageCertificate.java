@@ -11,15 +11,16 @@ public class PageCertificate {
     @FindBy(className = "certificate-check_message")
     WebElement checkMessage;
 
-    public void enterCertificateNum (String certNum){
-        input.sendKeys(certNum);
+    public void enterCertificateNum (String number){
+        input.sendKeys(number);
     }
-    public void checkButtonDisabled (){
-        if(checkButton.getAttribute("disabled").equals("disabled")){
-            System.out.println("Button is disabled");
-        }else {
-            checkButton.click();
-        }
+    public boolean messageDisplay (){
+       return checkMessage.isEnabled();
     }
+    public void clickButton(){
+        checkButton.click();
+    }
+
+
 
 }
